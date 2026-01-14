@@ -1,21 +1,32 @@
-# 🔬 High-Energy Data Analysis with PyROOT
+# 🔬 High-Energy Data Analysis with PyROOT: Caso Comercio Internacional
 
-Este repositorio contiene un análisis técnico especializado utilizando el framework **ROOT** (CERN) a través de su interfaz de Python, **PyROOT**. El proyecto demuestra la capacidad de procesar formatos de datos binarios masivos (`.root`) y realizar ajustes estadísticos complejos, herramientas estándar en la física de partículas y la investigación científica de alto nivel.
+Este repositorio contiene un análisis técnico especializado utilizando el framework **ROOT** (CERN) a través de su interfaz de Python, **PyROOT**. El proyecto demuestra la capacidad de procesar formatos de datos binarios masivos (`.root`) y realizar ajustes estadísticos complejos, aplicando herramientas estándar de la física de partículas al análisis de flujos comerciales internacionales.
+
+## 📝 Descripción del Problema
+En el análisis económico, el manejo de grandes volúmenes de datos transaccionales requiere herramientas altamente eficientes. Este proyecto aborda el reto de procesar bases de datos de **exportaciones globales**, donde la memoria y la precisión estadística son críticas. Se busca identificar tendencias, calcular agregados masivos y modelar el comportamiento comercial entre naciones utilizando una infraestructura de alto rendimiento.
 
 ## 🎯 Objetivos del Proyecto
-* **Procesamiento Eficiente:** Manejo de estructuras de datos `TTree` y `TBranch` para el acceso rápido a grandes volúmenes de eventos.
-* **Modelado Estadístico:** Implementación de ajustes de funciones (Curve Fitting) para la extracción de parámetros físicos y caracterización de señales.
-* **Visualización Científica:** Generación de gráficos con calidad de publicación, incluyendo leyendas técnicas y cajas de estadísticas detalladas.
+* **Procesamiento Eficiente:** Manejo de estructuras de datos `TTree` y `TBranch` para el acceso rápido y optimizado a grandes volúmenes de eventos comerciales.
+* **Modelado Estadístico:** Implementación de ajustes de funciones (**Curve Fitting**) y **Regresión Lineal** para la extracción de tendencias de crecimiento y caracterización de flujos.
+* **Visualización Científica:** Generación de gráficos de alta calidad (histogramas y gráficas de dispersión) con leyendas técnicas y cajas de estadísticas detalladas.
 
 ## 🛠️ Tecnologías y Herramientas
 * **Lenguajes:** Python, C++ (Back-end de ROOT).
-* **Librerías Principales:** PyROOT, NumPy.
+* **Librerías Principales:** PyROOT, NumPy, Pandas, Scikit-learn (para validación cruzada).
 * **Gestión de Entorno:** Conda (Conda-Forge).
 
 ## 📊 Componentes del Análisis
-1. **Exploración de Datos:** Inspección de la jerarquía de archivos `.root` para identificar variables críticas.
-2. **Generación de Histogramas:** Creación de distribuciones de frecuencia (`TH1F`) para análisis de variables como energía, momento o masa invariante.
-3. **Ajuste de Funciones (Fitting):** Aplicación de modelos Gaussianos y polinomiales para la separación de señal y ruido de fondo.
+
+### 1. Exploración y Procesamiento de Datos
+* **Inspección de Jerarquías:** Análisis de archivos `.root` para identificar variables críticas como volúmenes de exportación, socios comerciales y periodos.
+* **Cálculo de Totales:** Uso de iteradores eficientes en PyROOT para calcular el valor total de exportaciones por país de reporte.
+
+### 2. Generación de Histogramas
+* **Distribución de Frecuencias:** Creación de objetos `TH1F` para analizar la densidad de las transacciones y detectar picos o anomalías en el comercio internacional.
+
+### 3. Modelado: Regresión y Ajuste (Fitting)
+* **Ajuste de Funciones:** Aplicación de modelos lineales para cuantificar la tasa de crecimiento comercial.
+* **Extracción de Parámetros:** Validación del modelo mediante la interpretación de los coeficientes de ajuste obtenidos directamente desde el motor de ROOT.
 
 ## 🚀 Instalación y Reproducibilidad
 
@@ -27,6 +38,10 @@ conda create --name root_env -c conda-forge root
 
 # Activar el entorno
 conda activate root_env
+
+# Instalar soporte para Jupyter si es necesario
+conda install ipykernel
+python -m ipykernel install --user --name root_env --display-name "Python 3 (PyROOT)"
 
 # Abrir el notebook
 jupyter notebook
